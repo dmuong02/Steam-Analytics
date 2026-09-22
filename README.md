@@ -59,6 +59,8 @@ by genre, and which developers consistently deliver quality titles.
 - **Page 2:** Genre Analysis — sentiment treemap, game counts, engagement
 - **Page 3:** Pricing & Developers — developer leaderboard, price tier breakdown
 
+[View Live Dashboard](<iframe title="Steam Market Analytics Project" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNDk2NWUwZTAtMDM2OC00NWMzLWEyMjUtNGE4NzhiYmU1YTc5IiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>)
+
 ## Project Structure
 
 | File | Purpose |
