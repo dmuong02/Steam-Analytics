@@ -1,0 +1,101 @@
+name,positive_ratio,total_reviews,price,is_free
+Portal,98.47,177741,9.99,False
+Stardew Valley,98.44,886195,14.99,False
+Schedule I,98.41,204041,19.99,False
+Wallpaper Engine,98.04,894458,4.99,False
+Half-Life 2,97.6,245627,9.99,False
+Left 4 Dead 2,97.54,963983,9.99,False
+Terraria,97.48,1409473,9.99,False
+Counter-Strike,97.43,250245,9.99,False
+Euro Truck Simulator 2,97.36,867404,19.99,False
+Lethal Company,97.18,487160,9.99,False
+Satisfactory,97.16,232064,39.99,False
+Baldur's Gate 3,96.85,760662,59.99,False
+Garry's Mod,96.8,1159707,9.99,False
+Black Myth: Wukong,96.66,1150098,59.99,False
+Half-Life,96.54,148221,9.99,False
+R.E.P.O.,96.51,185642,9.99,False
+Counter-Strike: Source,96.26,182234,9.99,False
+The Witcher 3: Wild Hunt - Complete Edition,96.13,835349,49.99,False
+Sid Meier's Civilization V,95.82,204265,29.99,False
+Phasmophobia,95.82,768779,19.99,False
+The Forest,95.54,627791,19.99,False
+Sekiro: Shadows Die Twice - GOTY Edition,95.29,322234,59.99,False
+Don't Starve Together,95.26,499061,14.99,False
+Dying Light,95.2,457632,4.99,False
+Human Fall Flat,94.67,213640,5.99,False
+Valheim,94.32,499828,29.99,False
+Project Zomboid,94.19,377063,24.99,False
+Palworld,94.1,380709,29.99,False
+Grim Dawn,93.74,99730,24.99,False
+Risk of Rain 2,93.48,313577,24.99,False
+Raft,93.31,346359,19.99,False
+Cities: Skylines,92.96,275770,29.99,False
+ELDEN RING,92.89,1056677,59.99,False
+Borderlands 2,92.44,295218,4.99,False
+Red Dead Redemption 2,92.25,733542,59.99,False
+Among Us,91.85,700785,4.99,False
+Unturned,91.2,555368,0.0,True
+Half-Life 2: Deathmatch,90.67,14296,0.0,False
+Arma 3,90.42,283264,29.99,False
+Hogwarts Legacy,90.22,321395,59.99,False
+Team Fortress 2,89.91,1161472,0.0,True
+Counter-Strike: Condition Zero,89.75,14977,9.99,False
+PAYDAY 2,89.63,663082,9.99,False
+Path of Exile,89.25,235091,0.0,True
+Half-Life 2: Lost Coast,89.25,13686,0.0,False
+7 Days to Die,88.61,370046,44.99,False
+Monster Hunter: World,88.01,493390,29.99,False
+Mount & Blade II: Bannerlord,87.88,264391,49.99,False
+Sons Of The Forest,87.75,253546,29.99,False
+Grand Theft Auto V Legacy,87.41,1990556,0.0,False
+Rocket League,87.35,583220,0.0,False
+The Sims 4,87.31,170727,0.0,True
+Rust,87.24,1227784,19.99,False
+Warframe,87.05,626503,0.0,True
+Sid Meier’s Civilization VI,86.89,349920,59.99,False
+Counter-Strike: Global Offensive,86.69,8815087,0.0,True
+Life is Strange 2,86.3,36634,0.0,True
+"Warhammer 40,000: Rogue Trader",85.57,30805,49.99,False
+Paladins,84.98,346404,0.0,True
+Cyberpunk 2077,84.39,844921,59.99,False
+Tom Clancy's Rainbow Six Siege,83.86,1398584,0.0,True
+ARK: Survival Evolved,83.84,730170,14.99,False
+Fallout 4,83.12,392287,19.99,False
+CyberCorp,82.61,322,14.99,False
+Grand Theft Auto IV: Complete Edition,82.48,175272,0.0,False
+Brawlhalla,81.46,386456,0.0,True
+Fall Guys: Ultimate Knockout,81.3,473743,0.0,False
+Trove,80.22,92370,0.0,True
+Destiny 2,79.58,625616,0.0,True
+Last Epoch,79.57,110623,34.99,False
+Dead by Daylight,79.05,797216,19.99,False
+SMITE,78.77,119796,0.0,True
+World of Tanks Blitz,78.57,148161,0.0,True
+World of Warships,77.03,146552,0.0,True
+DayZ,76.78,430252,49.99,False
+HELLDIVERS 2,76.24,1017635,39.99,False
+Black Squad,75.93,81714,0.0,True
+VRChat,75.56,240355,0.0,True
+Ring of Elysium,74.47,99837,0.0,False
+Hunt: Showdown 1896,72.96,248220,29.99,False
+Lost Ark,71.02,202021,0.0,True
+Battlefield V,70.86,250288,4.99,False
+Path of Exile 2,70.12,169021,29.99,False
+Halo Infinite,69.66,177041,0.0,True
+NARAKA: BLADEPOINT,69.54,324927,0.0,True
+New World: Aeternum,68.6,286878,0.0,False
+Heroes & Generals,67.59,142763,0.0,False
+Apex Legends,67.14,994979,0.0,True
+Warface: Clutch,66.37,82197,0.0,False
+War Robots: Frontiers,64.15,3082,0.0,True
+War Thunder,63.99,757086,0.0,True
+PUBG: BATTLEGROUNDS,59.44,2557944,0.0,True
+Call of Duty: Modern Warfare II,58.76,714114,0.0,False
+Monster Hunter Wilds,58.27,218415,39.99,False
+Street Warriors Online,57.59,1634,1.99,False
+EA SPORTS FIFA 23,56.92,151419,0.0,False
+Z1 Battle Royale,55.75,204013,0.0,True
+NBA 2K20,49.87,60673,0.0,False
+eFootball,47.73,92333,0.0,True
+Battlefield 2042,46.74,297774,5.99,False

@@ -1,0 +1,6 @@
+tier,num_games,avg_positive_pct
+Free,39,75.5
+Premium ($30+),17,87.2
+Mid ($15-$30),20,89.9
+Budget (<$5),6,84.3
+Indie ($5-$15),18,91.8

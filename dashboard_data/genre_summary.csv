@@ -1,0 +1,17 @@
+genre_name,num_games,avg_positive_pct,avg_price,total_reviews
+Action,78,83.1,14.71,44190322
+Adventure,44,83.7,19.24,21539087
+Animation & Modeling,1,98.0,4.99,894458
+Casual,11,83.9,2.9,4918723
+Design & Illustration,1,98.0,4.99,894458
+Early Access,7,89.7,16.42,2432061
+Free To Play,28,75.2,0.0,20788479
+Indie,33,90.5,18.36,15751163
+Massively Multiplayer,22,73.5,5.32,9018999
+Photo Editing,1,98.0,4.99,894458
+RPG,32,87.0,26.24,15613616
+Racing,1,87.4,0.0,583220
+Simulation,26,82.5,14.53,8752160
+Sports,7,65.2,0.28,1603377
+Strategy,16,87.7,26.87,4377965
+Utilities,1,98.0,4.99,894458
