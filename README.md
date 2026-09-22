@@ -61,8 +61,6 @@ by genre, and which developers consistently deliver quality titles.
 
 ## Project Structure
 
-## Project Structure
-
 | File | Purpose |
 |---|---|
 | `fetch_data.py` | Pulls live data from Steam APIs |
