@@ -78,20 +78,20 @@ by genre, and which developers consistently deliver quality titles.
 
 ## Project Structure
 
+```
 steam-analytics/
-├── data/
-├── dashboard_data/
-├── venv/
-├── .env
-├── .gitignore
-├── .python-version
-├── fetch_data.py
-├── create_tables.py
-├── load_data.py
-├── export_for_dashboard.py
-├── analysis.sql
-├── README.md
-└── requirements.txt
+├── Data/                     # raw data pulled from the Steam APIs
+├── dashboard_data/           # exported CSVs for Power BI
+├── images/                   # dashboard screenshots
+├── fetch_data.py             # pulls live data from the Steam APIs
+├── create_tables.py          # builds the Postgres schema
+├── load_data.py              # cleans and loads data into Neon
+├── export_for_dashboard.py   # exports CSVs for Power BI
+├── analysis.sql              # 10 SQL analysis queries
+├── test_connection.py        # checks the Neon connection
+├── requirements.txt          # Python dependencies
+└── README.md
+```
 
 ## How to Run
 
@@ -115,4 +115,4 @@ Run the queries in `analysis.sql` against the database to reproduce the analysis
 
 Daniel Muongchanh  
 University of Washington Bothell — Data Analytics  
-[LinkedIn](https://www.linkedin.com/in/danielmuong/) | [GitHub](https://github.com/dmuong02)# Steam Market Analytics Dashboard
+[LinkedIn](https://www.linkedin.com/in/danielmuong/) | [GitHub](https://github.com/dmuong02)
