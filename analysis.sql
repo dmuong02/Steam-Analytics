@@ -17,7 +17,7 @@ SELECT
     CASE 
         WHEN p.price = 0 THEN '1. Free'
         WHEN p.price < 5 THEN '2. Budget (<$5)'
-        WHEN p.price < 15 THEN '3. Indie ($5-$15)'
+        WHEN p.price < 15 THEN '3. Low-cost ($5-$15)'
         WHEN p.price < 30 THEN '4. Mid ($15-$30)'
         ELSE '5. Premium ($30+)'
     END AS price_tier,

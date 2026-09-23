@@ -8,3 +8,4 @@ data/steam_reviews.csv
 data/steam.csv
 Data/raw_games.json
 data/raw_games.json
+.DS_Store

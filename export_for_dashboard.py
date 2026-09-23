@@ -34,7 +34,7 @@ exports = {
         SELECT CASE
             WHEN p.price = 0 THEN 'Free'
             WHEN p.price < 5 THEN 'Budget (<$5)'
-            WHEN p.price < 15 THEN 'Indie ($5-$15)'
+            WHEN p.price < 15 THEN 'Low-cost ($5-$15)'
             WHEN p.price < 30 THEN 'Mid ($15-$30)'
             ELSE 'Premium ($30+)'
         END as tier,
