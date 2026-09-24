@@ -1,118 +1,66 @@
 # Steam Market Analytics Dashboard
 
-A business intelligence project analyzing game performance, pricing strategy, 
-and review sentiment across the Steam platform using live API data.
+I built this project to look at the 100 most popular games on Steam and find out how price, genre, and developer relate to how much players like a game. A Python script pulls game data from two Steam APIs and stores it in a PostgreSQL database, and I use SQL and Power BI to analyze it.
 
-## Project Overview
+**[View the dashboard on Power BI](https://app.powerbi.com/view?r=eyJrIjoiNDk2NWUwZTAtMDM2OC00NWMzLWEyMjUtNGE4NzhiYmU1YTc5IiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9)**
 
-Built an end-to-end analytics pipeline to answer key business questions about 
-the Steam gaming market — what drives positive sentiment, how pricing varies 
-by genre, and which developers consistently deliver quality titles.
+![Dashboard preview](images/dashboard_overview.png)
 
-## Business Questions Answered
+## What I Wanted to Find Out
 
-- What games have the highest positive review scores and why?
-- How does price correlate with player sentiment across 100 top titles?
-- Which genres command premium pricing vs. budget positioning?
-- Which developers consistently deliver high-rated games?
-- Do free-to-play games perform better or worse than paid titles?
+1. Do more expensive games get better reviews?
+2. Which genres cost the most, and which get the best reviews?
+3. Which developers make consistently well-reviewed games?
+4. Do free-to-play games get better or worse reviews than paid games?
 
-## Key Findings
+## What I Found
 
-- Low-cpst games ($5–$15) have the highest avg sentiment at 91.8% — 
-  outperforming both free and premium titles
-- Price and sentiment have near-zero correlation (-0.014) — 
-  players don't rate expensive games higher
-- Action is the most represented genre (78 titles) but Strategy 
-  commands the highest avg price at $39
-- Valve leads all developers with 11 titles and 11.9M total reviews 
-  at 93.6% avg positive sentiment
-- Paid games score higher on average (86.5%) vs free-to-play (76.2%)
+To measure how much players like a game, I used its positive review percentage: the share of Steam reviews that recommend it.
 
-## Tech Stack
+- Among paid games, price has almost no connection to review scores. The correlation between them is -0.01, where 0 means no relationship at all.
+- Games priced $5 to $15 have the best reviews of any price range, averaging 91.8% positive.
+- Paid games average 86.5% positive reviews, compared with 76.2% for free-to-play games.
+- Action is the most common genre (78 of the 100 games), but Strategy games have the highest average price at $39.
+- Valve has 11 games in the top 100, more than any other developer, and they average 93.6% positive across 11.9 million reviews.
 
-| Tool | Purpose |
-|---|---|
-| Python (pandas, SQLAlchemy) | Data ingestion and cleaning |
-| Steam Store API + SteamSpy API | Live data source |
-| PostgreSQL (Neon) | Cloud relational database |
-| SQL | Analysis and KPI development |
-| Power BI | Dashboard and visualization |
+## How It Works
 
-## Database Schema
+1. **Collect:** `fetch_data.py` pulls data on the top 100 games from the Steam Store API and the SteamSpy API.
+2. **Build the database:** `create_tables.py` creates six tables in a Neon PostgreSQL database: `games`, `developers`, `genres`, `game_genres`, `prices`, and `reviews_summary`. Because one game can have several genres, `game_genres` links each game to each of its genres.
+3. **Clean and load:** `load_data.py` cleans the data and loads it into those tables.
+4. **Analyze:** `analysis.sql` has 10 queries that answer the questions above. They use joins across several tables, CTEs, CASE statements to group games into price ranges, and window functions like RANK() to rank genres.
+5. **Visualize:** `export_for_dashboard.py` exports the query results to CSV, and I built a three-page dashboard in Power BI.
 
-6 relational tables: `games`, `developers`, `genres`, 
-`game_genres`, `prices`, `reviews_summary`
+## Dashboard Pages
 
-## SQL Highlights
-
-- Multi-table JOINs across 5 tables
-- Window functions: RANK(), PARTITION BY, CORR()
-- CTEs for tiered analysis
-- CASE statements for price bucketing
-- HAVING clauses for developer filtering
-
-## Dashboard
-
-[View the live interactive dashboard](https://app.powerbi.com/view?r=eyJrIjoiNDk2NWUwZTAtMDM2OC00NWMzLWEyMjUtNGE4NzhiYmU1YTc5IiwidCI6ImY2YjZkZDViLWYwMmYtNDQxYS05OWEwLTE2MmFjNTA2MGJkMiIsImMiOjZ9)
-
-**Page 1: Game Performance Overview** (top games, price vs. sentiment)
-
-![Game performance overview](images/dashboard_overview.png)
-
-**Page 2: Genre Analysis** (sentiment treemap, game counts, engagement)
+1. **Game Performance Overview:** the top games and how price compares with reviews (shown above).
+2. **Genre Analysis:** review scores, game counts, and total reviews for each genre.
 
 ![Genre analysis](images/dashboard_genres.png)
 
-**Page 3: Pricing & Developers** (developer leaderboard, price tier breakdown)
+3. **Pricing & Developers:** a developer leaderboard and a breakdown by price range.
 
 ![Pricing and developers](images/dashboard_pricing.png)
 
-
 ## Limitations
 
-- The dataset covers the top 100 Steam titles, so findings describe popular games rather than Steam as a whole.
-- Sentiment is based on Steam's positive review ratio, which only reflects players who chose to leave a review.
-- Some comparisons (like free vs. paid) rest on small groups within 100 games, so treat them as directional.
-- Data is a snapshot from when the pipeline ran; prices and reviews change over time.
+- The data only covers the top 100 games, so the findings describe popular games, not Steam as a whole.
+- Review percentages only reflect players who chose to leave a review.
+- Some groups are small. For example, the free vs. paid comparison splits 100 games into two groups, so treat those results as a starting point, not a firm conclusion.
+- Genre averages count a game once in each of its genres, so a game with several genres shows up in more than one average.
+- The data is a snapshot from when I ran the pipeline. Prices and reviews change over time.
 
-## Project Structure
+## What I Learned
 
-```
-steam-analytics/
-├── Data/                     # raw data pulled from the Steam APIs
-├── dashboard_data/           # exported CSVs for Power BI
-├── images/                   # dashboard screenshots
-├── fetch_data.py             # pulls live data from the Steam APIs
-├── create_tables.py          # builds the Postgres schema
-├── load_data.py              # cleans and loads data into Neon
-├── export_for_dashboard.py   # exports CSVs for Power BI
-├── analysis.sql              # 10 SQL analysis queries
-├── test_connection.py        # checks the Neon connection
-├── requirements.txt          # Python dependencies
-└── README.md
-```
+- Pulling data from two APIs and combining it for the same games.
+- Designing related tables, including a linking table for games with more than one genre.
+- Writing SQL joins across several tables, CTEs, CASE statements, and window functions.
+- Building a multi-page Power BI dashboard and publishing it online.
 
-## How to Run
+## Tools
 
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+Python (pandas, SQLAlchemy) · PostgreSQL (Neon) · SQL · Power BI
 
-# Add a .env file with your Neon connection string:
-# DATABASE_URL=postgresql://...
+## Next Steps
 
-python fetch_data.py            # pull data from the Steam APIs
-python create_tables.py         # build the Postgres schema
-python load_data.py             # clean and load data into Neon
-python export_for_dashboard.py  # export CSVs for Power BI
-```
-
-Run the queries in `analysis.sql` against the database to reproduce the analysis.
-
-## Author
-
-Daniel Muongchanh  
-University of Washington Bothell — Data Analytics  
-[LinkedIn](https://www.linkedin.com/in/danielmuong/) | [GitHub](https://github.com/dmuong02)
+- Pull a larger set of games to see whether these patterns hold beyond the most popular titles.
