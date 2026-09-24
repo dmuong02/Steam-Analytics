@@ -132,7 +132,7 @@ JOIN reviews_summary r ON p.app_id = r.app_id
 GROUP BY model
 ORDER BY model;
 
--- 10. Top Genres by Total Player Engagment (Average Playtime)
+-- 10. Top Genres by Total Reviews (Player Engagement)
 SELECT 
     ge.genre_name,
     COUNT(DISTINCT g.app_id) AS num_games,
